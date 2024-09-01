@@ -1,0 +1,120 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --foreground-rgb: 33, 37, 41;  /* Dark gray that's softer on the eyes */
+  --background-start-rgb: 245, 248, 250;  /* Light grayish blue */
+  --background-end-rgb: 255, 255, 255;  /* Pure white */
+
+  --primary-color: #007bff;  /* Bright blue */
+  --secondary-color: #6c757d;  /* Flat gray */
+  --accent-color: #17a2b8;  /* Soft cyan */
+
+  --button-padding: 10px 20px;
+  --button-font-size: 16px;
+  --button-border-radius: 8px;
+  --button-transition: background-color 0.3s ease, color 0.3s ease;
+
+  --link-hover-color: #0056b3;  /* Darker blue for link hover state */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-start-rgb));
+  background-image: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  padding: 20px;
+  max-width: var(--max-width);
+  margin: auto;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  outline: none; /* Remove focus outline and replace with a color change */
+}
+
+button {
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
+  border: none;
+  border-radius: var(--button-border-radius);
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: var(--button-transition);
+}
+
+button:hover,
+button:focus {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+hr {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 248, 249, 250;
+    --background-start-rgb: 33, 37, 41;
+    --background-end-rgb: 24, 26, 27;
+
+    --primary-color: #17a2b8;
+    --link-hover-color: #138496;
+  }
+
+  body {
+    background-color: rgb(var(--background-start-rgb));
+    background-image: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+    color: rgb(var(--foreground-rgb));
+  }
+
+  a {
+    color: var(--primary-color);
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--link-hover-color);
+  }
+
+  button {
+    background-color: var(--accent-color);
+  }
+
+  button:hover,
+  button:focus {
+    background-color: lighten(var(--accent-color), 10%);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  button {
+    padding: 8px 16px; /* Smaller padding on mobile devices */
+    font-size: 14px; /* Smaller font size for better fit on mobile */
+  }
+}
